@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- *문제 
+    prompt를 이용하여 자기 소개 출력, 객체, 메서드, this 활용
+
+    ##출력결과##
+    이름: 
+    주 언어:
+    취미: -->
+
+    <script>
+
+        const text = prompt(`당신의 이름은 무엇입니까?`)
+        const text_2 = prompt(`당신의 언어는 무엇입니까?`)
+        const text_3 = prompt(`당신의 취미는 무엇입니까?`)
+        
+        const obj = {
+            id:0, name: text, lan: text_2, hob: text_3,
+            intro: function (){ 
+                document.write (`이름: ${this.name} <br>`);
+                document.write (`언어: ${this.lan} <br>`);
+                document.write (`취미: ${this.hob}`);
+            }
+        }
+
+        obj.intro();
+
+        // const name = prompt (`이름을 입력하세요`);
+        // const language = prompt (`언어를 입력하세요`)
+        // const hobby = prompt (`취미를 입력하세요`)
+
+        // const user = {
+        //     id:0, name: name, lan: language, hob: hobby,
+        //     userIntro: function(){
+        //         document.write(`이름:${this.name} <br>`)
+        //         document.write(`언어:${this.lan} <br>`)
+        //         document.write(`취미:${this.hob}`)
+
+        //     }
+        // }
+
+        // user.userIntro();
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

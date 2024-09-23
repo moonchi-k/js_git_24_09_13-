@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- *문제
+    1. 객체 하나 제작, 주제는 유저 정보를 저장하는 객체
+    2. 객체 속성은 username, email, profileImg
+    3. 속성에 맞게 속성값 지정
+
+    **출력결과**
+    ##유저정보##
+    유저아이디
+    이메일
+    profileImg -->
+
+    <script>
+
+        // 객체
+        const inform = {
+            username: `JavaScript`,
+            email: `java@scipt.com`,
+            profileImg:`js.jpg`,
+            intro: function (){
+                document.write (`유저아이디: ${this.username} <br>`);
+                document.write (`이메일: ${this.email} <br>`);
+                document.write (`profileImg: ${this.profileImg} <br>`);
+            }
+        }
+
+        document.write (`<h2>##유저정보##</h2> <br>`)
+        inform.intro(`java`, `java@script`, `profile`);
+
+
+        const inform_2 = {
+            intro: function (username, email, profileImg){
+                document.write (`유저아이디: ${username} <br>`);
+                document.write (`이메일: ${email} <br>`);
+                document.write (`profileImg: ${profileImg} <br>`);
+            }
+        }
+
+        document.write (`<h2>##유저정보##</h2> <br>`)
+        inform_2.intro(`java`, `java@script`, `profile`);
+
+        // 익명함수
+        const intro = function(username, email, profileImg){
+            document.write (`유저정보 : ${username} <br> 이메일 : ${email} <br>
+            profileImg : ${profileImg}`)
+        }
+
+        document.write (`<h2>##유저정보##</h2> <br>`)
+        intro(`JavaScript`,`java@script.com`,`js.jpg`);
+
+        // 선생님 풀이
+
+        const user = {
+            id: 0, username: `java script`, email: `java@script.com`, 
+            profileImg: `java.jpg`, 
+        }
+
+        document.write (`<h2>##유저정보##</h2> <br>`)
+        document.write (`<h2>유저 아이디: ${user.username}</h2> <br>`)
+        document.write (`<h2>이메일: ${user.email}</h2> <br>`)
+        document.write (`<h2>프로필: ${user.profileImg}</h2> <br>`)
+
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

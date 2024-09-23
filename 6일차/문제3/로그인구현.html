@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        const userInfo = {
+            id:0, username: "test", password: "123"
+        }
+        // 저장된 값. 
+
+        const ID = prompt(`아이디 입력`)
+        const PW = prompt(`비밀번호 입력`)
+
+        // 객체 안에 있으니까 user.쩜을 꼭 써줘야함.
+        if(ID !== userInfo.username && PW == userInfo.password){
+            document.write(`아이디틀림`);
+        }else if(ID == userInfo.username && PW !== userInfo.password){
+            document.write(`비번틀림`);
+        }else if(ID !== userInfo.username && PW !==userInfo.password){
+            document.write(`둘다틀림`);
+        }else if(ID == userInfo.username && PW ==userInfo.password){
+            document.write(`로그인되었습니다`);
+        }
+
+        // 논리가 겹치면 안됨.
+
+        if(ID !== userInfo.username){
+            document.write
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

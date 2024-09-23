@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // *배열 생성, 배열 내부에 객체 4개 생성, 
+        // 객체 내부에는 고유값, 아이디, 이메일, 프사 
+        // 배열에 지정된 4명의 유저를 브라우저에 출력하기 (반복문사용)
+
+       const user = [
+       {
+        id: 0,
+        username:"js",
+        email : "js@ja",
+        avatar : "js.jpg"
+       },
+       {
+        id: 1,
+        username:"js",
+        email : "js@ja",
+        avatar : "js.jpg"
+       },
+       {
+        id: 2,
+        username:"js",
+        email : "js@ja",
+        avatar : "js.jpg"
+       },
+       {
+        id: 3,
+        username:"js",
+        email : "js@ja",
+        avatar : "js.jpg"
+       },
+    //    마지막 객체에는 쉼표 넣어도 되고 안넣어도 됨. 
+       ];
+
+       for ( let i = 0; i < user.length; i ++) {
+        document.write(`<br> ${user [i].id} <br>`);
+        document.write(`${user [i].email} <br>`);
+        document.write(`${user [i].avatar} <br>`);
+        document.write(`${user [i].username} <br>`);
+        document.write(`--------------------------`);
+
+       }
+       
+    //    document.write(`${user [0].id} <br>`);
+    //    user 배열 안의 0번쨰 순서의, id라는 속성. 
+    //    document.write(`${user [0].username} <br>`);
+    //    document.write(`${user [0].email} <br>`);
+    //    document.write(`${user [0].avatar} <br>`);
+
+
+      
+
+       
+
+        
+
+
+
+
+        
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
