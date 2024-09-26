@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Noto Sans KR", system-ui;
+            color: white;
+        }
+
+        .wrap {
+            max-width: 415px;
+            min-height: 100vh;
+            width: 100%;
+            margin: 0 auto;
+            background-color: #1d1d1d;
+            /* x축 y축 blur spread color; */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+
+        }
+
+        header {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            margin-bottom: 50px;
+        }
+
+        header h3 {
+            font-weight: 400;
+        }
+
+        .back_btn {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgb(81, 115, 217);
+        }
+
+        .con_wrap {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .con_wrap h3 {
+            font-weight: 400;
+        }
+
+        .con_wrap_1 .con:nth-child(1) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .con_wrap_1 .con:nth-child(2) {
+           display: flex;
+           justify-content: space-between;
+           padding-top: 10px;
+           align-items: center;
+        }
+
+        .con{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .toggle_btn {
+            width: 60px;
+            height: 35px;
+            background-color: #555;
+            border-radius: 50px;
+            position: relative;
+        }
+
+        .one_btn {
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 2.5px;
+            left: 2.5px;
+            transition: 0.2s;
+        }
+
+        /* .active {
+            left: 27.5px;
+        }
+
+        .bg_active {
+            background-color: rgb(44, 202, 44);
+        } */
+
+        .toggle_btn.active {
+            background-color: rgb(44, 202, 44);
+        }
+
+        .toggle_btn.active .one_btn {
+            left: 27.5px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="wrap">
+
+        <header>
+
+            <div class="back_btn">
+                <i class="fa-solid fa-chevron-left"></i>
+                뒤로
+            </div>
+
+            <h3> 분석 및 향상</h3>
+
+        </header>
+
+        <section>
+
+            <div class="con_wrap con_wrap_1">
+
+                <div class="con">
+                    <h3>iPhone 분석 공유</h3>
+                    <div class="toggle_btn">
+                        <div class="one_btn"></div>
+                    </div>
+                </div>
+
+                <div class="con">
+                    <h3>분석 데이터</h3>
+                    <div class="next_arrow">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+               
+
+            </div>
+
+
+            <div class="con_wrap">
+                <div class="con">
+                    <h3>iCloud 분석 공유</h3>
+                    <div class="toggle_btn">
+                        <div class="one_btn"></div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="con_wrap">
+                <div class="con">
+                    <h3>안전 기능 향상</h3>
+                    <div class="toggle_btn">
+                        <div class="one_btn"></div>
+                    </div>
+                </div>
+    
+            </div>
+            
+            <div class="con_wrap">
+                <div class="con">
+                    <h3>Siri 및 받아쓰기 기능 향상</h3>
+                    <div class="toggle_btn">
+                        <div class="one_btn"></div>
+                    </div>
+                </div>
+            </div>
+
+           
+        </section>
+
+    </div>
+
+    <script>
+
+        const sectionE1 = document.querySelector ("section");
+
+        const toggleHandler = (e) => {
+            if (e.target.classList.contains('one_btn')){
+                e.target.parentNode.classList.toggle('active');  
+            } 
+
+            // console.log (e.target.parentNode);
+            // => 클릭한 타겟의 부모를 선택함. 
+
+        }
+
+        sectionE1.addEventListener("click", toggleHandler);
+
+    </script>
+
+</body>
+</html>

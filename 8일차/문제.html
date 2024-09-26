@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- *.con 열개 만들기, 콘솔로 열개 자식 출력하기  -->
+
+    1. 컨텐츠 선택하기
+    2. 컨텐츠 안에 h3 넣기 
+    3. h3숫자 1~10까지 만들기 
+    
+    *필요도구 
+    => document.queryselectorAll();
+    => append, innerHTML, for(){}... 
+
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+
+    <script>
+
+        const boxE_1 = document.querySelectorAll(".div");
+        
+        // boxE_1.innerHTML = `<h3>i</h3>`;
+        
+        for( let i = 0; i < boxE_1.length; i ++){
+            boxE_1[i].innerHTML = `<h3>${i+1} 번째 </h3>`
+        }
+
+        // boxE_1[0].innerHTML = `<h3>1</h3>`;
+        // boxE_1[1].innerHTML = `<h3>2</h3>`;
+        // boxE_1[2].innerHTML = `<h3>3</h3>`;
+
+        // 반복하는 거 적어놓고 줄이기!!! 
+
+
+        
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .con_wrap {
+            max-width: 700px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 100px auto;
+        }
+
+        .con {
+            width: 120px;
+            height: 120px;
+            background-color: teal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            border-radius: 50%;
+        }
+
+        @keyframes ani {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.5);
+            }
+
+            75% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                border-top-left-radius: 0;
+                transform: scale(1);
+            }
+
+
+        }
+
+        .active {
+            animation: ani 1s 1 forwards;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="con_wrap">
+        <div class="con"></div>
+        <div class="con"></div>
+        <div class="con"></div>
+        <div class="con"></div>
+        <div class="con"></div>
+
+    </div>
+
+    <script>
+
+        const conE1 = document.querySelectorAll(".con");
+        
+
+        // const conHandler1 = () => {
+        //     conE1[0].classList.add("active");
+        // }
+
+        // const conHandler2 = () => {
+        //     conE1[1].classList.add("active");
+        // }
+
+        // const conHandler3 = () => {
+        //     conE1[2].classList.add("active");
+        // }
+
+        // conE1[0].addEventListener("click", conHandler1)
+        // conE1[1].addEventListener("click", conHandler2)
+        // conE1[2].addEventListener("click", conHandler3)
+
+        // conE1[0].addEventListener("click", () => {
+        //     conE1[0].classList.add("active");
+        // });
+
+        // conE1[1].addEventListener("click", () => {
+        //     conE1[1].classList.add("active");
+        // });
+
+        // conE1[2].addEventListener("click", () => {
+        //     conE1[2].classList.add("active");
+        // });
+
+        for ( let i = 0; i < conE1.length; i ++){
+            conE1[i].addEventListener('click', () => {
+            conE1[i].classList.toggle("active");
+            conE1[i].innerText = i+1
+        });
+        }
+
+        // const conE1 = document.querySelector (".con_wrap");
+        // const conE2 = document.querySelectorAll (".con")
+
+        // const conE1Handler = (e) => {
+        //     console.log(e.target);
+        //     conE2[0].classList.add("active");
+        // }
+
+        // conE1.addEventListener("click", conE1Handler);
+
+
+
+
+    </script>
+    
+</body>
+</html>

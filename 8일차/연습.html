@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <!-- 배열 안에 객체 세개 id도 잡고,  -->
+    
+
+<body>
+
+    <div class="conwrap"></div>
+    
+    <script>
+
+        const profile = [
+            {
+                id : 0,
+                title : "뭉치누나",
+                text : "맡겨드릴 수 있음에 감사"
+            },
+
+            {
+                id : 1,
+                title : "콩돌이형",
+                text : "자유함을 주심에 감사"
+            },
+
+            {
+                id : 2,
+                title : "달이형",
+                text : "청춘에 때를 함께 보냄에 감사"
+            },
+        ]
+
+        const conwrap = document.querySelector(`.conwrap`);
+
+        for (let i = 0; i < profile.length; i++){
+            const parent = document.createElement(`div`);
+            const aE1 = document.createElement(`h4`);
+            const aE2 = document.createElement(`h3`);
+            aE2.classList.add('con');
+
+
+            aE1.innerHTML = profile[i].title
+            aE2.innerHTML = profile[i].text
+            parent.append(aE1);
+            parent.append(aE2);
+
+            conwrap.append(parent);
+        }
+
+        // document.body.append(parent);
+
+        
+
+    </script>
+
+
+</body>
+</html>

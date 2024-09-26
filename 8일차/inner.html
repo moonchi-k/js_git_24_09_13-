@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<body>
+
+    <div class="box"></div>
+    <script>
+
+        const boxE_1 = document.querySelector(`.box`)
+
+        boxE_1.innerText = `아메리카노 헤이즐넛 시럽은 한 번만`;
+        // => 태그에 내용을 넣을 때 사용
+
+        boxE_1.innerHTML = `두 번은 너무 달앙`;
+
+        boxE_1.innerText = `<h2>Hello</h2>`
+        boxE_1.innerHTML = `<h2>Hello</h2>`
+        boxE_1.innerHTML = `<h3> hello </h3>`
+        // innerHTML은 내용 뿐 아니라, 태그도 적용됨. 
+
+
+    </script>
+
+    
+</body>
+</html>

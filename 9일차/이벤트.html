@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .like {
+        width: 120px;
+        padding: 10px 10px;
+        margin: 5px;
+        border: 1px solid #bdbdbd;
+        text-align: center;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+
+</style>
+<body>
+
+    <div class="like">
+        <i class="fa-regular fa-thumbs-up"></i> 
+        <span> 좋아요</span>
+        <span class="number">0</span>
+    </div>
+
+    <script>
+
+        // *이벤트
+        // => 어떠한 행위를 했을 때 상호작용이 일어남 
+
+        // *addEventListener("이벤트명", 실행할 함수)
+
+        const likeE1 = document.querySelector (".like");
+        const numE1 = document.querySelector (".number");
+        let num = 0;
+
+
+        // likeE1.addEventListener("click", () => {
+        //     likeE1.style.backgroundColor = "salmon";
+        //     numE1.innerText = num++;
+        // });
+
+        const clickHandler = () => {
+            numE1.innerText = num++;
+            // 0에서 이너텍스트가 num이라는 변수로 바뀌는 것. 
+            likeE1.style.backgroundColor = "salmon";
+        }
+
+        // const clickHandler = () => numE1.innerText = num ++;
+        
+        // 화살표 함수는 변환값이 한 줄일 때 중괄호 생략 가능 
+
+
+        likeE1.addEventListener("click", clickHandler);
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   
+</head>
+<body>
+
+    <div class="box"></div>
+
+    <!-- *자바스크립트 스타일 
+    => 선택자.style.속성 = "값";
+    => 속성 명 중 하이픈으로 들어가는 속성은 카멜케이스로 작성할 것 (예 backgroundColor)
+    => 태그 내부로 ㅅ타일이 적용되므라 우선순위가 높습니다 -->
+
+    <script>
+
+        const boxE1 = document.querySelector(`.box`);
+
+        boxE1.style.width = "300px"
+        boxE1.style.height = "300px"
+        boxE1.style.backgroundColor = "salmon"
+
+
+
+
+    </script>
+    
+</body>
+</html>

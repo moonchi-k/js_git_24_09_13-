@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .con_wrap {
+            max-width: 1400px;
+            width: 100%;
+            margin: 100px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .con {
+            width: 32%;
+            height: 500px;
+            background-color: palevioletred;
+            font-size: 50px;
+            transition: 0.5s;
+        }
+
+        .con1 {
+            opacity: 0.5;
+        }
+
+
+        .con2 {
+            opacity: 0.7;
+        }
+
+
+        .active {
+            background-color: pink;
+            border-radius: 20px;
+        }
+
+        /* 추가할 클래스 넣어놓고 화면 상에서 확인할 수 없으니 검사창에서 클래스 넣고 
+        제대로 들어갔는지 확인해보기 */
+
+    </style>
+</head>
+<body>
+    
+    <div class="con_wrap">
+        <div class="con con1"></div>
+        <div class="con con2"></div>
+        <div class="con con3"></div>
+    </div>
+
+    <script>
+
+        // const conE1 = document.querySelectorAll (".con");
+      
+        // const conE1handler = () => {
+        //     conE1[0].classList.add("active");
+
+        // }
+
+        // conE1[0].addEventListener("click", () => {
+        //     conE1[0].classList.add ("active");
+        // });
+        
+        // conE1[1].addEventListener("click", () => {
+        //     conE1[1].classList.add ("active");
+        // });
+        
+        // conE1[2].addEventListener("click", () => {
+        //     conE1[2].classList.add ("active");
+        // });
+        
+        // for ( let i = 0; i < conE1.length; i ++){
+        //     conE1[i].addEventListener("click", () => {
+        //     conE1[i].classList.add ("active");
+        // });
+        // }
+
+        // *이벤트 위임
+        // => 부모에게 이벤트를 적용시킴
+        // => 자식이 필요하면 이벤트가 설정됨
+
+        const conWrapE1 = document.querySelector (".con_wrap");
+        // const conAll = document.querySelectorAll (".con");
+
+        // const clickHandler = (e) => {
+        //     e.target.classList.toggle("active");
+            
+        // }
+
+        // conWrapE1.addEventListener("click", clickHandler);
+
+     
+
+        const clickHandler = (e) => {
+            if (e.target.classList.contains('con')) {
+                e.target.classList.toggle ("active");
+            }
+        }
+
+        // 조건문은 불리언 값만 나오면 됨. 연산자가 꼭 안들어가도됨!! 
+
+
+        conWrapE1.addEventListener("click", clickHandler);
+
+    </script>
+</body>
+</html>
