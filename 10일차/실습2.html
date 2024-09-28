@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            max-width: 450px;
+            width: 100%;
+            height: 100vh;
+            background-color: #1d1d1d;
+            margin: 0 auto;
+            padding: 40px 20px;
+            overflow: scroll;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .menu_wrap {
+            width: 580px;
+            /* background-color: tomato; */
+            display: flex;
+            justify-content: space-evenly;
+            
+        }
+
+        .menu {
+            font-size: 15px;
+            padding: 7px;
+            background-color: teal;
+            border-radius: 7px;
+            margin-right: 5px;
+        }
+
+        .menu:last-child {
+            margin-right: 0;
+        }
+
+        .active {
+            background-color: lightgrey;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+
+        <div class="menu_wrap"></div>
+    
+    </div>
+    <script>
+
+        const menus = [
+            {
+                id: 0,
+                title: "전체",
+                url: "#"
+            },
+
+            {
+                id: 1,
+                title: "Shorts",
+                url: "#"
+            },
+
+            {
+                id: 2,
+                title: "동영상",
+                url: "#"
+            },
+
+            {
+                id: 3,
+                title: "시청하지 않음",
+                url: "#"
+            },
+
+            {
+                id: 4,
+                title: "감상한 동영상",
+                url: "#"
+            },
+            
+            {
+                id: 5,
+                title: "최근에 업로드된 동영상",
+                url: "#"
+            },
+
+            {
+                id: 6,
+                title: "라이브",
+                url: "#"
+            },
+        ];
+
+        const menuWrapE1 = document.querySelector (".menu_wrap");
+        // const menuE1 = document.createElement("div");
+        // // => div 태그 제작
+       
+        // menuE1.classList.add('menu');
+        // // => 클래스 추가
+
+        // menuE1.innerHTML = `<a href="${menus[0].url}"> ${menus[0].title}</a>`
+        // // 메뉴스 배열의, 0번째의 url, 타이틀. 계속 바뀌는 값이니까 변수로 사용. 제작한 메뉴 태그에 a태그 링크와 타이틀 추가
+        
+        // menuWrapE1.append(menuE1);
+
+        for ( let i = 0; i < menus.length; i ++){
+            const menuE1 = document.createElement("div");
+            menuE1.classList.add('menu');
+            menuE1.innerHTML = `<a class = one href="${menus[i].url}"> ${menus[i].title}</a>`
+            menuWrapE1.append(menuE1);
+        }
+
+        
+        const clickHandler = (e) => {
+            if (e.target.classList.contains('one')){
+                e.target.parentNode.classList.add("active")
+            }
+        }
+
+        menuWrapE1.addEventListener("click", clickHandler);
+
+    </script>
+    
+    
+
+</body>
+</html>

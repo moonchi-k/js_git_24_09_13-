@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="menuwrap"></div>
+
+    <script>
+
+        const menus = [
+            {
+                id: 0,
+                title: "전체",
+                url: "#"
+            },
+
+            {
+                id: 1,
+                title: "Shorts",
+                url: "#"
+            },
+
+            {
+                id: 2,
+                title: "동영상",
+                url: "#"
+            },
+
+            {
+                id: 3,
+                title: "시청하지 않음",
+                url: "#"
+            },
+
+            {
+                id: 4,
+                title: "감상한 동영상",
+                url: "#"
+            },
+            
+            {
+                id: 5,
+                title: "최근에 업로드된 동영상",
+                url: "#"
+            },
+
+            {
+                id: 6,
+                title: "라이브",
+                url: "#"
+            },
+        ];
+
+            const conWrap = document.querySelector('.menuwrap');
+
+            
+            for ( let i = 0; i < menus.length; i ++){
+
+            const menuE1 = document.createElement('div');
+            // div가 메뉴 갯수만큼 있어야하니까, 반복문에 추가해야함
+
+            menuE1.classList.add('menu');
+
+            menuE1.innerHTML = ` <a href = "${menus[i].url}"> ${menus[i].title}</a>`
+
+            conWrap.append(menuE1);
+
+            }
+           
+            
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    
+    <h2> 현재 시간 </h2>
+    <div class="clock"></div>
+
+    <script>
+
+        // *String ()
+        // => 숫자 타입을 문자로 변경해줌 
+
+        // padStart (개수, 값)
+        // => 문자 타입만 사용 가능
+        // => 이 문자열의 시작 부분에 다른 문자열을 채움
+        
+
+        const clockE1 = document.querySelector ('.clock');
+        const date = new Date();
+        const hour = String(date.getHours()).padStart(2,"0");
+        const min = String(date.getMinutes()).padStart(2,"0");
+        const sec = String(date.getSeconds()).padStart(2,"0");
+
+        console.log(typeof hour)
+
+        const timeHandler = () => {
+            const date = new Date();
+            const hour = String(date.getHours()).padStart(2,'0');
+            const min = String(date.getMinutes()).padStart(2,'0');
+            const sec = String(date.getSeconds()).padStart(2,'0');
+            clockE1.innerText = `${hour}:${min}:${sec}`            
+        }
+
+        timeHandler();
+        // => setInterval 함수로 1초 뒤에 시간이 지정되므로 1초 뒤가 아닌 함수를 바로 호출해줌. 
+        setInterval(timeHandler, 0);
+
+        
+
+    </script>
+
+</body>
+</html>
