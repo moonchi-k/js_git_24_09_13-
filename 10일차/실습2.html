@@ -110,7 +110,7 @@
 
         const menuWrapE1 = document.querySelector (".menu_wrap");
         // const menuE1 = document.createElement("div");
-        // // => div 태그 제작
+        // // => 새로운 div 태그 제작
        
         // menuE1.classList.add('menu');
         // // => 클래스 추가
@@ -130,6 +130,7 @@
         
         const clickHandler = (e) => {
             if (e.target.classList.contains('one')){
+                // 클래스 이름 중에 one이라는 걸 포함하고 있으면, 그래서 a태그에 클래스 명 추가함.
                 e.target.parentNode.classList.add("active")
             }
         }
