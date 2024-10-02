@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <div class="wrap">
+        <div class="con_wrap">
+            <div class="menu"> = 
+            <div class = "menu_wrap">
+                <div class = "menu_list_1"> 메뉴 1 </div>
+                <div class = "menu_list_1"> 메뉴 2 </div>
+                <div class = "menu_list_1"> 메뉴 3 </div>
+                <div class = "menu_list_1"> 메뉴 4 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        const wrapE1 = document.querySelector ('.con_wrap');
+
+        const conList = [
+            {
+                id:0,
+                imgUrl:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+                profile: "user 1",
+                post: "https://cdn.pixabay.com/photo/2017/03/23/17/02/night-2168868_1280.png",
+            },
+
+          
+        ]
+
+        const postList = document.createElement('div');
+        postList.classList.add('list');
+
+        postList.innerHTML = `<div class = "title"><img class = "profile" src = ${conList[0].imgUrl}>
+             ${conList[0].profile}</div>
+            <img class="post" src = ${conList[0].post}> 
+            <div class = "icons"><div class = "likeicon"><i class="fa-regular fa-heart"> </i> </div>
+            <div class = "likedicon"><i class="fa-solid fa-heart liked"></i></div></div>`
+
+
+        wrapE1.append(postList);
+        
+        
+        const like = document.querySelector('.likeicon'); 
+        const liked = document.querySelector(".likedicon");
+       
+        console.log(postList);
+
+        like.addEventListener("click", () => {
+           
+            like.classList.toggle('active');
+            liked.classList.toggle('active');
+            
+        });
+
+        liked.addEventListener("click", () => {
+            like.classList.toggle('active');
+            liked.classList.toggle('active');
+        })
+        
+        console.log(postList);
+
+        const ham = document.querySelector('.menu');
+        const menu = document.querySelector(".menu_wrap");
+
+        ham.addEventListener("click", () => {
+            ham.classList.toggle('menu_wrap');
+            console.log(ham);
+        })
+
+    </script>
+    
+</body>
+</html>
