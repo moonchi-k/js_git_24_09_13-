@@ -1,0 +1,100 @@
+@import url(reset.css);
+
+a {
+    text-decoration: none;
+    color: #1d1d1d;
+}
+img {
+    width: 100%;
+    display: block;
+    
+}
+
+.swiper {
+    width: 600px;
+    height: 300px;
+   }
+
+.wrap {
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu {
+    cursor: pointer;
+    font-size: 26px;
+    position: relative;
+    z-index: 100;
+}
+
+.menu_wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    background-color: #f1f1f1;
+    transition: 0.5s;
+}
+
+.menu_active {
+    left: 0;
+}
+
+.menu_wrap li {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.con {
+    background-color: #f1f1f1;
+    margin-top: 35px;
+    padding: 20px;
+}
+
+.user_info {
+    display: flex;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: lightblue;
+    margin-right: 15px;
+    overflow: hidden;
+}
+
+.bg {
+    height: 400px;
+    background-color: slateblue;
+    margin: 20px 0;
+}
+
+.bg img {
+    height: 100%;
+    object-fit: cover;
+    /* 이미지태그를 배경이미지처럼 가득 채울 때 사용 */
+}
+
+.heart {
+    font-size: 20px;
+    color: rgb(64, 64, 64);
+    cursor: pointer;
+}
+
+.full_heart {
+    color: red;
+}

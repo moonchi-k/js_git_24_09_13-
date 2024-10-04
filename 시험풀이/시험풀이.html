@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <div class="wrap">
+
+        <header>
+            <div class="menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="menu_wrap">
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+
+            </ul>
+        </header>
+
+        <div class="con">
+            <div class = "user_info">
+                <div class="avatar"></div>
+                <div class="username"></div>
+            </div>
+            <div class="bg">
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                      <!-- Slides -->
+                            <div class="swiper-slide">Slide 1</div>
+                            <div class="swiper-slide">Slide 2</div>
+                            <div class="swiper-slide">Slide 3</div>
+                        </div>
+                    <!-- If we need pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+                  
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+            <div class="bottom_wrap">
+                <div class="heart">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="con">
+            <div class = "user_info">
+                <div class="avatar"></div>
+                <div class="username"></div>
+            </div>
+            <div class="bg"></div>
+            <div class="bottom_wrap">
+                <div class="heart">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="con">
+            <div class = "user_info">
+                <div class="avatar"></div>
+                <div class="username"></div>
+            </div>
+            <div class="bg"></div>
+            <div class="bottom_wrap">
+                <div class="heart">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+            </div>
+        </div>
+
+
+        
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+    </script>
+
+
+        
+</body>
+</html>
