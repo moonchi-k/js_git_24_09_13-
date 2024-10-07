@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,11 +34,31 @@
             const hour = String(date.getHours()).padStart(2,'0');
             const min = String(date.getMinutes()).padStart(2,'0');
             const sec = String(date.getSeconds()).padStart(2,'0');
-            clockE1.innerText = `${hour}:${min}:${sec}`            
+            const time = 12;
+            clockE1.innerText = `${hour}-${time}:${min}:${sec}` 
+            
+            if (
+                hour > 12 
+                // 오후
+            ){
+                clockE1.innerText = `PM ${hour-time}:${min}:${sec}` 
+            } else if (
+                hour === 12
+            ){
+                clockE1.innerText = `PM ${hour}:${min}:${sec}` 
+            }else if (
+                hour < 12
+                // 오전
+            ){
+                clockE1.innerText = `AM ${hour}:${min}:${sec}`                 
+            } else {
+                clockE1.innerText = `AM ${hour}:${min}:${sec}`                 
+            }
         }
 
         timeHandler();
         // => setInterval 함수로 1초 뒤에 시간이 지정되므로 1초 뒤가 아닌 함수를 바로 호출해줌. 
+        // 화면에 바로 뜨게 하려공 
         setInterval(timeHandler, 0);
 
         

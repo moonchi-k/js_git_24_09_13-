@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        h3 {
+            color: tomato;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <script>
+
+        // *중첩반복문
+        // => 반복문 안에 반복문 작성
+        // => 부모 반복문이 한번 출력되면 자식 반복문이 전체 순회함.
+
+        // for(let i = 0; i < 4; i ++){
+        //     document.write(`<h3>${i}</h3>`);
+        //     for(let o = 4; o < 7; o ++){
+        //         document.write(o)
+        //     }
+        // }
+
+        // 문제 구구단 1단부터 9단까지 출력
+
+        for (let i = 1; i <= 9; i ++){
+            document.write(`<h3><u><i>${i}단</i></u></h3>` );
+            for(let a = 1; a <= 9; a ++ ){
+                document.write(`${i}x${a}=${i*a} <br>`);
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

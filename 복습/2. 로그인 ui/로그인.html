@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+       * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+       }
+       
+       .wrap {
+
+            width: 400px;
+            border: 1px solid #808080;
+            border-radius: 20px;
+            margin: 100px auto;
+            padding: 100px 30px;
+        }
+
+        h2 {
+            font-size: 50px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+       input {
+        /* 인풋은 옆으로 나열되지만 크기가 들어감. */
+        /* 인풋 기본스타일 다빼고 시작함 */
+            all: unset;
+            /* all unset은 항상 제일 위에 넣어야함 */
+            width: 100%;
+            height: 50px;
+            border: 1px solid #808080;
+            border-radius: 30px;
+            padding-left: 20px;
+            line-height: 50px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            /* 인풋은 패딩 보더박스 따로 줘야함 */
+       }
+
+       button {
+        all: unset;
+        width: 100%;
+        height: 50px;
+        background-color: royalblue;
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 30px;
+        font-size: 18px;
+        font-weight: 900;
+        margin-top: 10px;
+       }
+
+       h5 {
+        margin-top: 20px;
+        color: #333;
+
+       }
+
+       a {
+        font-weight: 900;
+        text-decoration: none;
+       }
+       
+
+
+
+        /* .id {
+            width: 150px;
+            height: 15px;
+            border-radius: 5%;
+            border-color: black;
+            border: solid 1px black;
+        } 
+
+        .id, .password {
+            width: 150px;
+            height: 20px;
+            border: solid 1px #808080;
+            float: left; 
+         border-radius: 20px;
+            
+            padding-left: 10px;
+        }
+
+
+        .btn {
+            width: 150px;
+            height: 20px;
+            border-radius: 20px;
+            background-color: blue;
+        }  */
+ 
+
+
+    </style>
+</head>
+<body>
+    <form class="wrap">
+
+        <h2> LOGIN </h2>
+
+       
+        <input type="text" placeholder="ID">
+        <input type="text" placeholder="PASSWORD">
+       <button>
+        로그인
+       </button>
+
+        <h5>
+            아이디가 없으신가요? 
+            <a href="#">
+                회원가입
+            </a>
+        </h5>
+    </form>
+</body>
+</html>

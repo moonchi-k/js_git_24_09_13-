@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햄버거연습</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul,li{
+            list-style: none;
+        }
+
+        .wrap{
+            max-width: 480px;
+            height: 100vh;
+            width: 100%;
+            margin: 0 auto;
+            border: 10px solid black;
+            position: relative;
+        }
+
+      .con {
+        display: flex;
+        /* background-color: tan; */
+        width: 200px;
+        /* height: 400px; */
+        position: relative;
+        transform: translateX(419px);
+        transition-duration: 0.5s;
+      }
+
+      .con.active {
+        transform: translateX(260px);
+      }
+
+      .menu_bar {
+        /* position: absolute; */
+        margin-right: 30px;
+        font-size: 40px;
+        z-index: 100;
+        right: 0;
+        cursor: pointer;
+      }
+
+      .menu {
+        background-color: tan;
+        width: 200px;
+        height: 400px;
+        /* position: absolute; */
+        /* transform: translateX(-419px);
+        z-index: 800; */
+      }
+
+
+    </style>
+</head>
+<body>
+
+    
+    
+    <div class="wrap">
+
+       <div class="con">
+        <div class="menu_bar">=</div>
+
+        <ul class="menu">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JAVA SCRIPT</li>
+        </ul>
+       </div>
+
+    </div>
+
+    <script>
+
+        const wrapE1 = document.querySelector ('.con');
+
+        const clickHandler = (e) => {
+            e.target.parentNode.classList.toggle('active');
+        }
+
+        wrapE1.addEventListener("click",clickHandler)
+
+    </script>
+
+
+</body>
+</html>

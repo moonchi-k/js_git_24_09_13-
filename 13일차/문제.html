@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            height: 300vh;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: tomato;
+            transition: 0.5s;
+        }
+
+        /* *문제 
+        스크롤을 내렸을 때 엘리먼트가 회전되게 만들기 */
+
+        .box_active {
+            
+            /* transform-origin: center; */
+            animation: rotate 2s infinite;
+            top: 50%;
+            left: 50%;  
+    
+        }
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+    
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <div class="box"></div>
+    </div>
+
+    <script>
+
+        const handlerScroll = () => {
+            const pageY = pageYOffset
+            const boxE1 = document.querySelector('.box');
+            console.log (pageY);
+
+            if (pageY >= 500){
+                boxE1.classList.add('box_active');
+            } 
+        }
+
+        window.addEventListener('scroll', handlerScroll);
+
+    </script>
+    
+</body>
+</html>

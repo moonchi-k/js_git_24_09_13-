@@ -77,10 +77,11 @@ const Ham = document.querySelector('.menu');
 const hamHandler = (e) => {
    if (true) {
     Ham.parentNode.classList.add('active');
-   } else {
-    Ham.parentNode.classList.remove('active');
-   }
+   } 
 }
+
+    // 새로운ㅇ 클릭핸들러 만들어야함 
+
 Ham.addEventListener("click", hamHandler);
 
 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // 문제 : 5단 출력, 입력한 구구단 출력
+
+
+        // document.write("5단 <br>")
+        // for(let i=1; i < 10; i++) {
+        //     document.write(`5X${i} = ${i * 5} <br>`)
+        // } 
+
+        // const inputNum = Number(prompt('숫자입력'))
+        // document.write((inputNum) + "단<br>") 
+
+        // for(let a=1; a < 10; a++) {
+        // document.write (`${inputNum} X ${a} = ${inputNum*a} <br>`)
+        // }
+
+        // 풀이
+
+        document.write("5단 <br>")
+        for(let i = 1; i < 10; i++){ 
+            // 조건은 내가 몇번 반복할 지만 적어주면 됨
+            document.write(`5 X ${i} = ${i*5} <br>`)
+            // 나머지는 변수를 잘 조립해주기만함
+        }
+
+        const num = Number(prompt("숫자를 입력하세요"))
+        document.write(`${num}단 <br>`)
+
+        for(let a = 1; a <= 9; a++) {
+            document.write(`${num} X ${a} = ${num * a} <br>`)
+        }
+
+
+        
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

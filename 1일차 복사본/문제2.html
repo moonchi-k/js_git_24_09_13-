@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- *문제 1
+    =>h1 ~ h6태그를 이용하여 브라우저에 자바스크립트 출력하기
+
+    *문제 2
+    =>브라우저에 a + b = 10 출력하기
+
+    두 문제 다 변수 활용 -->
+
+    <script>
+
+
+        document.write('<h1>자바스크립트</h1>');
+        document.write('<h2>자바스크립트</h2>');
+        document.write('<h3>자바스크립트</h3>');
+        document.write('<h4>자바스크립트</h4>');
+        document.write('<h5>자바스크립트</h5>');
+        document.write('<h6>자바스크립트</h6>');
+
+        var a = 7;
+        var b = 3;
+        var c = a+b;
+        document.write("a + b = " + c);
+
+
+
+        //------------------------문제 풀이----------------------------------------------------------------
+
+        var text = "자바스크립트";
+        var num_1 = 5;
+        var num_2 = 5;
+        var result = num_1 + num_2;
+        var sum = "a + b = ";
+
+        document.write('<h1>' + text + '</h1>');
+        document.write('<h2>' + text + '</h2>');
+        document.write('<h3>' + text + '</h3>');
+        document.write('<h4>' + text + '</h4>');
+        document.write('<h5>' + text + '</h5>');
+        document.write('<h6>' + text + '</h6>');
+
+        document.write("a + b = " + (num_1 + num_2) + "<br>");
+        //첫번째 방법
+
+        document.write("a + b = " + result + "<br>");
+        //두번째 방법
+
+        document.write(sum + result + "<br>");
+        //세번째 방법
+
+        document.write(sum + (num_1 * 2));
+        //네번째 방법
+
+
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

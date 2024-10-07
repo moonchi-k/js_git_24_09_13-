@@ -14,10 +14,24 @@
         }
 
         header {
-            padding: 20px 250px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            height: 100px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);    
+        }
+
+        .progress {
+            height: 10px;
+            background-color: lightgrey;
+        }
+
+        .bar {
+            width: 0%;
+            height: 100%;
+            background-color: tomato;
         }
 
         section {
@@ -32,7 +46,7 @@
         }
 
         .section_1 {
-            background-color: lightgray;
+            background-color: lightsalmon;
         }
 
         .section_2 {
@@ -43,16 +57,12 @@
         .title {
             text-align: center;
             margin-bottom: 30px;
-            transform: translateY(150px);
-            opacity: 0.2;
+            /* transform: translateY(150px); */
+            /* opacity: 0.2; */
             transition: 0.5s;
         }
 
-        .title_active {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
+     
         .con_wrap {
             display: flex;
             padding: 0 250px;
@@ -62,21 +72,15 @@
         .con {
             width: 32%;
             height: 500px;
-            background-color: lightgray;
+            background-color: lightsalmon;
         }
 
         .section_3 {
             height: 700p;
-            background-color: lightgray;
+            background-color: lightsalmon;
         }
 
-        .header_active {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #fff;
-        }
+       
 
     </style>
 </head>
@@ -85,7 +89,9 @@
     <div class="wrap">
 
         <header>
-            <h3>Header</h3>
+            <div class="progress">
+                <div class="bar"></div>
+            </div>
         </header>
 
         <section class="section_1">
@@ -113,35 +119,29 @@
 
     <script>
 
-        const headerE1 = document.querySelector('header');
-        const secE1_2 = document.querySelector('.section_2');
-        const titleE1 = document.querySelector('.title');
+        const barE1 = document.querySelector('.bar');
+        const wrapE1 = document.querySelector('.wrap');
 
 
-
-        const handleScroll = () => {
+        const handlerScroll = () => {
             const pageY = pageYOffset;
-            // => 스크롤바의 높이값을 px단위로 알아옴 
-            console.log(pageY);
-            const secTop_2 = secE1_2.offsetTop;
-            // => 엘리먼트의 top값을 px단위로 알아옴
-            console.log(secTop_2);
+            const wrapTop = wrapE1.offsetHeight;
+            const windowTop = window.innerHeight;
+            const useScroll = wrapTop - windowTop;
+            const result = (pageY / useScroll) * 100;
+            console.log("wrap의 높이값:" + wrapTop);
+            // 전체 랩의 높이 값
+            // 브라우저 높이값 
+            console.log("브라우저의 높이값 : " + windowTop);
+            // => 전체 높이 빼기 브라우저의 높이 = 순수 사용할 수 있는 높이값
+            console.log(result)
 
-            if (pageY >= 300){
-                headerE1.classList.add('header_active');
-            } else {
-                headerE1.classList.remove('header_active');
-            }
-
-            if (pageY >= secTop_2 / 2){
-                titleE1.classList.add('title_active');
-            }
+            barE1.style.width = `${result}%`
         }
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handlerScroll);
 
     </script>
-
     
 </body>
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+</head>
+<body>
+
+    <!-- 
+    form 태그의 method 형식은 크게 get 형식과 post가 있다
+    get: 유저가 입력한 값이 노출이 돼도 상관 없을 때 (검색) 
+    post: 유저의 정보를 숨길 때 (로그인)-->
+    
+    <form> 
+        <input type="text" placeholder="검색어를 입력하세요">
+        <input type="button" value="검색">
+        <br>
+        <br>
+        <input type="checkbox" id="check_1"> 
+        <label for="check_1">선택1</label>
+
+        <input type="checkbox" id="check_2">
+        <label for="check_2">선택2</label>
+      
+        <!-- 
+        체크박스 생성
+        클자를 클릭해도 체크가 되게 만들 땐 id 선택자 지정하고 
+        label태그에 for 속성으로 연결시키기 -->
+
+        <br>
+        <br>
+
+        <input type="radio" id="tab_1" name="tab"> 
+        <label for="tab_1">선택1</label>
+        <input type="radio" id="tab_2" name="tab"> 
+        <label for="tab_2">선택2</label>
+
+        <!-- 
+        radio값은 단독으로 선택할 때 사용,
+        name값을 이용하여 같은 radio값인지 인식 할 때 사용 -->
+
+      <br>
+      <br>
+
+      <button>버튼태그</button>
+
+      <input type="submit">
+
+      <br>
+      <br>
+
+      <input type="color" name="" id="">
+        <input type="time">
+        <input type="week" name="" id="">
+        
+        <br>
+
+        <input type="password" name="" id="">
+
+        <input type="range">
+
+    </form>
+    
+</body>
+</html>

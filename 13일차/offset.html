@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: lightgray;
+            margin: 100px auto;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    
+    <div class="box"></div>
+
+    <script>
+
+        const boxE1 = document.querySelector('.box');
+
+        console.log(`top값: ${boxE1.offsetTop}`);
+        console.log(`left값: ${boxE1.offsetLeft}`);
+
+        console.log(`width값: ${boxE1.offsetWidth}`);
+        console.log(`height값: ${boxE1.offsetHeight}`);
+
+        console.log(`브라우저 높이값: ${window.innerHeight}`)
+        console.log(`브라우저 가로값: ${window.innerWidth}`)
+
+    </script>
+    
+</body>
+</html>

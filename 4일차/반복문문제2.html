@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 문제 
+    숫자를 입력하여 입력한 숫자가 홀수인지 짝수인지 판단 후 
+    홀수면 홀수단만 곱하고 짝수면 짝수단만 곱하기 -->
+
+    <script>
+
+        // const num = Number (prompt ("숫자를 입력하세요"));
+        // document.write(`${num}단 <br>`);
+        // const result = num % 2
+
+        // if(result === 0){
+        //     for(let i=1; i <=4; i++) {
+        //         document.write(`${num} X ${i*2} = ${num*(i*2)} <br>`)
+        //     }
+        // }else if(result === 1){
+        //     for(let a=1; a <=5; a++) {
+        //         document.write(`${num} X ${a*2-1} = ${num*(a*2-1)} <br>`)
+        //     }
+        // }
+
+        // 풀이
+
+        const num = Number(prompt("숫자를 입력하세요"));
+        const result = num % 2;
+
+        if(result===0){
+            document.write( `${num} 단 <br>`);
+            for(let i = 2; i < 10; i += 2){
+                // 2씩 증가하는데, 증가하는 값 (i+2한 값)이 10보다 작다.
+                document.write(`${num} X ${i} = ${num * i} <br>`);
+            }
+        }else if (result===1){
+            document.write( `${num} 단 <br>`);
+            for(let i = 1; i < 10; i +=2){
+                document.write(`${num} X ${i} = ${num*1} <br>`);
+            }
+        }else{
+            document.write("숫자를 입력하세요.")
+        }
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

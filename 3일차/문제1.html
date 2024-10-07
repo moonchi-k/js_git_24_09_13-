@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        span {
+
+            color: red;
+            font-weight: 900;
+
+        }
+    </style>
+
+    <script>
+
+        const inputNum = Number(prompt ('숫자를입력하세여'));
+        const inputNum_2 = Number(prompt ('숫자를 또 입력하세여'));
+
+        document.write("첫번째 숫자는 " + "<span>" + inputNum + "</span>" + " 입니다. <br>")
+        document.write("두번째 숫자는 " + "<span>" + inputNum_2 + "</span>" + " 입니다. <br>")
+
+        if(inputNum>inputNum_2){
+            document.write('결과는<span>첫번째</span>숫자가 더 큽니다');
+        }else if(inputNum<inputNum_2){
+            document.write('결과는 두번째 숫자가 더 큽니다.');
+        }else if(inputNum===inputNum_2){
+            document.write("결과는 같습니다.");
+        }else {
+            document.write("글자적지마세요.");
+        }
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
