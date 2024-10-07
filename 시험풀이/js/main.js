@@ -20,6 +20,14 @@ const users = [
         imgUrl: "https://health.chosun.com/site/data/img_dir/2023/07/17/2023071701753_0.jpg",
     },
 
+    {
+        id: 3,
+        avatarUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD797KzfFQ3V70GGDeqn4TpjmsjvAHqiO38qIFvewvyFP86tV-cXP9vO5gGRfJip3SJH4&usqp=CAU",
+        username: "user 3",
+        imgUrl: "https://health.chosun.com/site/data/img_dir/2023/07/17/2023071701753_0.jpg",
+    },
+
+
 ];
 
 const wrapE1 = document.querySelector('.wrap');
@@ -31,9 +39,9 @@ const menuWrapE1 = document.querySelector('.menu_wrap');
 let isClicked = true;
 
 for ( let i = 0; i < users.length; i ++){
-    avatarAll[i].innerHTML = `<img src = "${users[0].avatarUrl}">`;
-    usernameAll[i].innerText = users[0].username;
-    bgAll[i].innerHTML = `<img src = "${users[0].imgUrl}">`;
+    avatarAll[i].innerHTML = `<img src = "${users[i].avatarUrl}">`;
+    usernameAll[i].innerText = users[i].username;
+    bgAll[i].innerHTML = `<img src = "${users[i].imgUrl}">`;
 }
 
 const hearthandler = (e) => {
@@ -46,16 +54,18 @@ const hearthandler = (e) => {
 }
 
 const menuhandler = () => {
-    if (isClicked === true){
+    if (isClicked){
         // isClicked라고만 써도 됨 isClicked가 이미 true니까
         menuWrapE1.classList.add('menu_active');
         isClicked = false;
+        console.log(menuE1)
         // isClicked 라는 변수가 false가 됨
-    }else if (isClicked === false
+    }else if (!isClicked 
         // !isClicked 라고도 쓸 수 있음
     ){
         menuWrapE1.classList.remove('menu_active');
         isClicked = true;
+        
     }
 }
 

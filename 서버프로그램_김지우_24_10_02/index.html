@@ -36,7 +36,12 @@
                 post: "https://cdn.pixabay.com/photo/2017/03/23/17/02/night-2168868_1280.png",
             },
 
-          
+            {
+                id:1,
+                imgUrl:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+                profile: "user 1",
+                post: "https://cdn.pixabay.com/photo/2017/03/23/17/02/night-2168868_1280.png",
+            },
         ]
 
         const postList = document.createElement('div');
@@ -50,6 +55,21 @@
 
 
         wrapE1.append(postList);
+
+        const postList2 = document.createElement('div');
+        postList2.classList.add('list');
+
+        postList2.innerHTML = `<div class = "title"><img class = "profile" src = ${conList[1].imgUrl}>
+             ${conList[1].profile}</div>
+            <img class="post" src = ${conList[1].post}> 
+            <div class = "icons"><div class = "likeicon"><i class="fa-regular fa-heart"> </i> </div>
+            <div class = "likedicon"><i class="fa-solid fa-heart liked"></i></div></div>`
+
+
+        wrapE1.append(postList2);
+
+
+
         
         
         const like = document.querySelector('.likeicon'); 
