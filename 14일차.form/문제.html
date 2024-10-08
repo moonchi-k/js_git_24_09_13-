@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        form {
+            max-width: 450px;
+            width: 100%;
+            /* margin: 100px auto; */
+            border: 1px solid #dbdbdb;
+            border-radius: 10px;
+            padding: 80px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        form h3 {
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+
+        input {
+            all: unset;
+            width: 300px;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    
+    <form>
+        <input class = "id" type="text" placeholder="ID">
+        <input class = "pw" type="password" placeholder="PASSWORD">
+        <h5></h5>
+    <button>로그인</button>
+
+    </form>
+
+
+
+
+    <script>
+
+        const formE1 = document.querySelector('form');
+        const IDE1 = document.querySelector('.id');
+        const PWE1 = document.querySelector('.pw');
+        const hE1 = document.querySelector('h5');
+       
+        const userInfo = {
+            id:0,
+            username:"test",
+            password:"123"
+        }
+
+
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            const idValue = IDE1.value;
+            const pwValue = PWE1.value;
+            if (
+                idValue === userInfo.username && pwValue === userInfo.password
+            ){
+                alert("로그인되었습니다.");       
+            } else if (
+                idValue !== userInfo.username
+            ){
+                hE1.innerText = `아이디가 틀렸습니다.`
+            } else if (
+                pwValue !== userInfo.password
+            ){
+                hE1.innerText = `비밀번호가 틀렸습니다.`
+            }
+        }
+
+        console.log(`로그인`);
+        
+   
+        formE1.addEventListener("submit", handleSubmit);
+
+    </script>
+</body>
+</html>

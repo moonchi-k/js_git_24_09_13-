@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        form {
+            padding: 50px 100px;
+        }
+
+        input {
+            all:unset;
+            border-bottom: 1px solid #dbdbdb;
+            width: 100%;
+            font-size: 18px;
+            padding: 10px;
+            /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); */
+        }
+
+        h2 {
+            padding: 0 100px;
+
+        }
+
+        span {
+            color: tomato;
+        }
+
+        h3 {
+            padding: 30px 100px;
+            font-weight: 400;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="검색어를 입력해주세요.">
+    </form>
+    <h2></h2>
+    <h3></h3>
+
+  <script>
+
+    const formE1 = document.querySelector('form');
+    const inputE1 = document.querySelector('input');
+    const hE1 = document.querySelector('h2');
+    const hE2 = document.querySelector('h3');
+
+    const movies = [
+        {
+            id: 0,
+            title: '조커폴리아되',
+            desc: "세상이란 무대에서 폭주하기 시작한 조커와 할리퀸"
+        },
+
+        {
+            id: 1,
+            title: '비긴어게인',
+            desc: "다시 나를 빛나게 할 노래"
+        },
+
+        {
+            id: 2,
+            title: '이터널선샤인',
+            desc: "사랑은 그렇게 다시 기억된다."
+        },
+
+    ]
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const inputValue = inputE1.value;
+        hE1.innerHTML = `<span>${inputValue}</span>의 검색결과...`;
+
+        const result = movies.filter (
+            (a) => a.title === inputValue
+        );
+        // 무비스는 객체가 여러개지만, 결과의 객체는 하나. 
+
+       
+        if (
+            result.length === 0
+            // result의 길이가 0이라는 거는 필터링해서 걸린게 없다는 뜻. 
+        ){
+            hE2.innerHTML = `검색결과가 없습니다.`    
+        } else {
+            hE2.innerHTML = `${result[0].desc}`    
+        // result 는 하나로 필터링 됨, 그러니까 0번. 그리고 그 안의 설명. 
+
+        }
+        
+    }
+
+    formE1.addEventListener("submit", handleSubmit);
+
+  </script>
+
+</body>
+</html>
