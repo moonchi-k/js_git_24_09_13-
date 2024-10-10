@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .con {
+            width: 450px;
+            margin: 0 auto;
+            border: 1px solid #bdbdbd;
+        }
+        
+        .bg {
+            height: 400px;
+            background-color: lightgreen;
+        }
+
+        .title_wrap {
+            padding: 15px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .dark_btn {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        body.dark_active {
+            background-color: #1e1e20;
+        }
+
+        body.dark_active .con {
+            border-color: #333;
+        }
+
+        /* 바디에 다크액티브가 붙으면, 바디의 자식인 .con의 스타일이, */
+
+        body.dark_active .title_wrap {
+            color: #fff;
+        }
+
+        .fa-lightbulb {
+            color: gold;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="con">
+        <div class="bg"></div>
+        <div class="title_wrap">
+            <div class="title">Contents title</div>
+            <div class="dark_btn">
+                <i class="fa-regular fa-moon"></i>
+        </div>
+        </div>
+    </div>
+
+    <script>
+
+        const darkBtnE1 = document.querySelector('.dark_btn');
+        const getDark = localStorage.getItem("DARK_MODE");
+        const light = () => {
+            document.body.classList.add('dark_active');
+            darkBtnE1.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+        }
+
+        if (
+            getDark === "on"
+        ){
+            // document.body.classList.add('dark_active');
+            // darkBtnE1.innerHTML = `<i class="fa-solid fa-lightbulb"></i>`;
+            // 밑에 조건문에도 같은 명령이라 함수로 저장해서 저장값만 넣어줘도됨 
+            light();
+        }
+
+        const handleDark = () => {
+            const getDark = localStorage.getItem("DARK_MODE");
+
+            console.log(getDark);
+
+            if (
+                getDark === null
+            ){
+                localStorage.setItem("DARK_MODE", "on");
+                // document.body.classList.add('dark_active');
+                // darkBtnE1.innerHTML = `<i class="fa-solid fa-lightbulb"></i>`;
+                // 밑에 조건문에도 같은 명령이라 함수로 저장해서 저장값만 넣어줘도됨 
+                light();
+            }else if (getDark === "on"){
+                localStorage.removeItem("DARK_MODE");
+                document.body.classList.remove('dark_active');
+                darkBtnE1.innerHTML = 
+                `<i class="fa-regular fa-moon"></i>`
+
+            }
+
+        
+
+        }
+
+
+        darkBtnE1.addEventListener("click", handleDark);
+
+
+    </script>
+
+</body>
+</html>
