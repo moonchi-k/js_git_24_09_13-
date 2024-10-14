@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가대비</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrap">
+
+        <div class="con">
+
+            <div class="user_info">
+                <div class="avatar"></div>
+                <div class="username">test username</div>
+            </div>
+            <div class="bg"></div>
+            <div class="bottom_wrap">
+                <div class="heart">
+                    <i class="fa-regular fa-heart" ></i>
+                </div>
+                <form>
+                    <input type="text" placeholder="댓글을 입력해주세요.">
+                </form>
+                <div class="comment_box"></div>
+            </div>
+    
+        </div>
+
+    </div>
+
+    <script>
+
+        const formEl = document.querySelector(`form`);
+        const inputEl = document.querySelector(`input`);
+        const commentEl = document.querySelector(`.comment_box`);
+        const commentCount = localStorage.length;
+        let review = 0;
+        
+        
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            const inputValue = inputEl.value;
+            const commentCount = localStorage.length;
+
+            const new_comment = document.createElement(`div`);
+            new_comment.classList.add(`new`);
+            commentEl.append(new_comment);
+            new_comment.innerText = inputValue;
+            inputEl.value = "";
+
+            localStorage.setItem(`comment_${commentCount}`,inputValue);
+            // review++
+            // localStorage.setItem(`review`,review);
+
+        }
+
+        const loadComments = () => {
+
+            for(let i = 0; i <localStorage.length; i++){
+
+                const loadComment = localStorage.getItem(`comment_${i}`);
+
+                // console.log(loadComment);
+                if(loadComment !== null){
+                        // const loadComment = localStorage.getItem(`comment_${i}`);
+                        const new_comment = document.createElement(`div`);
+                        new_comment.classList.add(`new`);
+                        commentEl.append(new_comment);
+                        new_comment.innerText = loadComment;
+                        console.log(`성공`);
+                    
+                    }
+                    
+                }
+        }
+            
+            
+        loadComments();
+            
+        formEl.addEventListener(`submit`,handleSubmit);
+
+
+
+
+    
+    </script>
+    
+    
+</body>
+</html>
