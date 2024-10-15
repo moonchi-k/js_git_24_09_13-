@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .con {
+            max-width: 450px;
+            width: 100%;
+            /* margin: 0 auto; */
+            border: 1px solid #bdbdbd;
+        }
+
+        .bg {
+            height: 400px;
+            background-color: #bdbdbd;
+        }
+
+        input {
+            all: unset;
+            padding: 10px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+
+        <div class="con">
+            <div class="bg"></div>
+            <form >
+                <input type="text" placeholder="내용">
+            </form>
+            <div class="comment_wrap"></div>
+        </div>
+
+    </div>
+
+    <script>
+
+        const formE1 = document.querySelector('form');
+        const inputE1 = document.querySelector('input');
+        const commentWrap = document.querySelector('.comment_wrap');
+
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            const inputValue = inputE1.value;
+            const commentE1 = document.createElement('p');
+            commentE1.innerText = inputValue;
+            // console.log(commentE1);
+            commentWrap.append(commentE1);
+            // 이까지만하면 썼던 댓글이 그대로남음. 다음댓글쓸때 일일이 지워야됨. 
+            inputE1.value = "";
+            // 다음댓글쓸때 이전댓글이 지워짐. 인풋 창에서. 
+        }
+
+        formE1.addEventListener('submit', handleSubmit);
+
+    </script>
+
+</body>
+</html>
